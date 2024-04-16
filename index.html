@@ -352,16 +352,18 @@
             gap: 1rem;
          } 
          nome {
+            display: block;
             font-size: 2em;
             font-weight: 600;
-            color: #121212;
+            color: var(--nome-color);
             text-transform: uppercase;
          }
          titulo {
+            display: block;
             font-size: 1.4em;
             font-weight: bold;
             font-style: italic;
-            color: #121212;
+            color: var(--titulo-color);
             text-transform: uppercase;
          }
 
@@ -374,43 +376,43 @@
          subtitulo {
             display: block;
             font-size: 1.3em;
-            color: #fc0fc0;
+            color: var(--subtitulo-color);
          }
 
 
 
-         /* == [ experiencias ] */
-         experiencias {
+         /* == [ sections ] */
+         experiencias, contato, tecnologias,
+         formacao {
             display: flex;
             flex-direction: column;
             padding: 1em 0;
+         }
+         
+         
+         
+         /* == [ experiencias ] */
+         experiencias {
+            gap: .8rem;
          }
 
 
 
          /* == [ contato ] */
          contato {
-            display: flex;
-            flex-direction: column;
-            padding: 1em 0;
          }
 
 
 
          /* == [ tecnologias ] */
          tecnologias {
-            display: flex;
-            flex-direction: column;
-            padding: 1em 0;
          }
 
 
 
          /* == [ formação ] */
          formacao {
-            display: flex;
-            flex-direction: column;
-            padding: 1em 0;
+            gap: .8rem;
          }
 
 
@@ -419,24 +421,25 @@
             :root {
                --homepage-color: #f5f5f5;
                --homepage-text-color: #333;
+               
+               --nome-color: #f5f5f5;
+               --titulo-color: #f5f5f5;
+               --subtitulo-color: #fc0fc0
             }
          }
          @media ( prefers-color-scheme: dark ) {
             :root {
                --homepage-color: #212329;
                --homepage-text-color: #bbb;
+               
+               --nome-color: #ccc;
+               --titulo-color: #f5f5f5;
+               --subtitulo-color: #fc0fc0;
             }
          }
       </style>
    </head>
    <body>
-      <appbar>
-         <appbar-body>
-            <appbar-brand></appbar-brand>
-            <t1></t1>
-            <appbar-options></appbar-options>
-         </appbar-body>
-      </appbar>
 
       <main>
 
@@ -460,74 +463,6 @@
                </strong>
             </description>
          </sobre>
-
-         <experiencias>
-            <subtitulo>Experiencia</subtitulo>
-            <header>
-               <strong>Freelances,</strong>
-               São Paulo
-               <strong>Desenvolvedor Fullstack</strong>
-               Outubro 2023 - Presente
-            </header>
-
-            <experiencia>
-               <header>
-                  Projeto: <strong>Aluguel de carro ( 
-                  <c-link to="" txt="">Link do Projeto</c-link>
-                  )</strong>
-               </header>
-               <li>
-                  O site oferece uma interface fácil de usar para 
-                  pesquisar, comparar e reservar carros de uma 
-                  ampla seleção de veículos que variam em marca, 
-                  modelo, tamanho e preço.
-               </li>
-               <li>
-                  Tecnologias: ReactJS, HTML5, CSS3, Sass,
-                  JavaScript, Figma
-               </li>
-            </experiencia>
-
-            <experiencia>
-               <header>
-                  Projeto: <strong>Lookat - Preço justo (
-                  <c-link to="" txt="">
-                     Link do Projeto
-                  </c-link>
-                  )</strong>
-               </header>
-               <li>
-                  Um site institucional para divulgar os produtos 
-                  da Lookat, que permite aos visitantes encontrar 
-                  uma peça de automóvel específica por meio do 
-                  menu de busca avançada.. 
-               </li>
-               <li>
-                  Tecnologias: ReactJS, HTML5, CSS3, Sass, 
-                  JavaScript, Figma, Controle de versão: Git.
-               </li>
-            </experiencia>
-            
-            <experiencia>
-               <header>
-                  <strong>Estágio,</strong>
-                  Remoto
-                  <strong>Estagiario Fullstack</strong>
-                  Janeiro 2023 - Outubro 2024
-               </header>
-               
-               <li>
-                  Auxiliei no desenvolvimento e implementação 
-                  de interfaces de usuário usando tecnologias 
-                  como HTML, CSS e JavaScript.
-               </li>
-               <li>
-                  Colaborei com a equipe de desenvolvimento 
-                  para solucionar problemas técnicos e lehorar a 
-                  usabilidade dos projetos.
-               </li>
-            </experiencia>
-         </experiencias>
 
          <contato>
             <subtitulo>Links de contato</subtitulo>
@@ -591,6 +526,73 @@
             </educacao>
          </formacao>
 
+         <experiencias>
+            <subtitulo>Experiencia</subtitulo>
+            <header>
+               <strong>Freelances,</strong>
+               São Paulo
+               <strong>Desenvolvedor Fullstack</strong>
+               Outubro 2023 - Presente
+            </header>
+
+            <experiencia>
+               <header>
+                  Projeto: <strong>Aluguel de carro ( 
+                  <c-link to="" txt="">Link do Projeto</c-link>
+                  )</strong>
+               </header>
+               <li>
+                  O site oferece uma interface fácil de usar para 
+                  pesquisar, comparar e reservar carros de uma 
+                  ampla seleção de veículos que variam em marca, 
+                  modelo, tamanho e preço.
+               </li>
+               <li>
+                  Tecnologias: ReactJS, HTML5, CSS3, Sass,
+                  JavaScript, Figma
+               </li>
+            </experiencia>
+
+            <experiencia>
+               <header>
+                  Projeto: <strong>Lookat - Preço justo (
+                  <c-link to="" txt="">
+                     Link do Projeto
+                  </c-link>
+                  )</strong>
+               </header>
+               <li>
+                  Um site institucional para divulgar os produtos 
+                  da Lookat, que permite aos visitantes encontrar 
+                  uma peça de automóvel específica por meio do 
+                  menu de busca avançada.. 
+               </li>
+               <li>
+                  Tecnologias: ReactJS, HTML5, CSS3, Sass, 
+                  JavaScript, Figma, Controle de versão: Git.
+               </li>
+            </experiencia>
+            
+            <experiencia>
+               <header>
+                  <strong>Estágio,</strong>
+                  Remoto
+                  <strong>Estagiario Fullstack</strong>
+                  Janeiro 2023 - Outubro 2024
+               </header>
+               
+               <li>
+                  Auxiliei no desenvolvimento e implementação 
+                  de interfaces de usuário usando tecnologias 
+                  como HTML, CSS e JavaScript.
+               </li>
+               <li>
+                  Colaborei com a equipe de desenvolvimento 
+                  para solucionar problemas técnicos e melhorar a 
+                  usabilidade dos projetos.
+               </li>
+            </experiencia>
+         </experiencias>
       </main>
 
       <script>
